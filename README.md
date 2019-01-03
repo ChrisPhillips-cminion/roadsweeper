@@ -1,4 +1,4 @@
-#ROADSWEEPER
+# ROADSWEEPER
 
 ROADSWEEPER is a kubernetes cronjob that runs in a namespace and delete all completed pods and corresponding jobs. The purpose of this was to clean up a namespace after cronjbos had run. If the pod is not completed then both the pod and the job remain.
 
@@ -9,9 +9,9 @@ Before the pod works you need to enable access to the pods in the desired namesp
 
 ```kubectl create clusterrolebinding default --clusterrole=cluster-admin --serviceaccount=<namespace>:default```
 
-##Usage
+## Usage
 
 ```helm install <path to repo>/helm/roadsweeper> --set namespace=<target namespace> --namespace <namespace>```
 
-#Warning
+# Warning
 I have only done limited testing with the cronjob running in the same namespace I am cleaning. This is sufficient for my purposes.
