@@ -1,0 +1,14 @@
+{
+  "name": "roadsweeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "cminion",
+  "license": "ISC",
+  "dependencies": {
+    "kubernetes-client": "^6.7.0"
+  }
+}

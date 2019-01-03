@@ -1,0 +1,25 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "roadsweeper.fullname" . }}-roadsweeper
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: roadsweeper
+            image: cminion/roadsweeper:1.0
+            imagePullPolicy: Always
+            env:
+            - name: namespace
+              value: {{ .Values.namespace }}
+            resources:
+              limits:
+                cpu: 0.1
+                memory: 100Mi
+              resources:
+                cpu: 0.1
+                memory: 50Mi
+          restartPolicy: Never
